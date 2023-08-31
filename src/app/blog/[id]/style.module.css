@@ -1,0 +1,77 @@
+.container{
+    margin-top: 60px;
+}
+.postDate{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 3vh;
+}
+.post{
+    background-color: rgb(241, 241, 241);
+    color: black;
+    margin: 10px;
+    padding: 10vw;
+    padding-bottom: 2vh;
+}
+.post h1{
+    font-size: 2vw;
+    margin-bottom: 3vh;
+}
+.content{
+    font-size: 1.4vw;
+    margin-top: 5px;
+}
+.recentPostHeader{
+    margin:20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10vw;
+    /* gap: 50px; */
+}
+.recentPostHeader span{
+    font-size: larger;
+}
+
+.blogPost{
+    display: flex;
+    width: 50%;
+    background-color: rgb(241, 241, 241);
+    /* margin: 10px; */
+    /* padding: 10px; */
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    margin-bottom: 10px;
+    height: auto;
+    
+}
+.recentPosts{
+        
+    display:block; 
+    justify-content: center;
+    align-items: center; 
+    /* display:contents; */
+    column-count: 2;
+    margin: 0 20px;
+    height: auto;
+}
+.imga{
+    height: auto;
+    width: 100%;
+    /* width: fit-content; */
+    object-fit: contain;
+}
+.txtArea{
+    width: 50%;
+    padding: 10px;
+    color: black;
+    margin: 2px;
+}
+.txtArea h1{
+    font-size: 2vw;
+}
+.txtArea p{
+    font-size: 1vw;
+}

@@ -1,0 +1,38 @@
+.container{
+
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+    max-width: 1200px;
+    background-color: rgb(16, 16, 16);
+    padding: 2px;
+}
+
+.logo{
+    max-height: 100%;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    width: auto;
+    gap: 20px;
+    color: white;
+}
+.link:hover{
+    color: rgb(107, 245, 192) ;
+}
+.auth{
+    border:none;
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(107, 245, 192);
+}
+

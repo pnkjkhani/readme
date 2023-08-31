@@ -1,0 +1,247 @@
+.container {
+    margin-top: 60px;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    z-index: 1000;
+    height: calc(100vh);
+    text-align: justify;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.leftContainer {
+    flex: 1;
+    background-color: #f7f8fa;
+    position: sticky;
+    margin-top: 0;
+    padding: 5px;
+}
+
+.iconList{
+    margin-top: 50px;
+    width: 100%;
+    height: fit-content;
+}
+.listItem{
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    gap: 5px;
+    margin: 30px 0;
+}
+.listItem:hover{
+    background-color:  rgb(254, 249, 249);
+}
+.hLine{
+    width: 80%;
+    height: 1px;
+    background-color: black;
+}
+
+.writeBlog{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid  rgb(255, 255, 255);
+    width: max-content;
+}
+
+.leftBody{
+   width: 100%;
+   height: auto;
+}
+
+
+.midContainer {
+    flex: 4;
+    padding: 0 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+.midBody {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.midHeader {
+    position: sticky;
+    background-color: #f7f8fa;
+}
+
+.midHeaderContent {
+    border-radius: 5px;
+    padding: 20px 20px 15px;
+    display: flex;
+    grid-gap: 20px;
+    gap: 20px;
+}
+
+.midHeaderSearch {
+    flex: 6 1;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    gap: 10px;
+    border: 1px solid rgb(235, 240, 245);
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(235, 240, 245);
+}
+
+.midHeaderSearch:hover {
+    border: 1px solid black;
+}
+
+.midHeaderSearch input {
+    height: 100%;
+    padding: 10px;
+    border: none;
+}
+
+.midHeaderFilter {
+
+    flex: 2;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    color: black;
+    font-size: small;
+    padding: 1px;
+    border: 1px solid rgb(235, 240, 245);
+    /* border: 2px solid green; */
+}
+
+.midHeaderFilter:hover {
+    border: 1px solid black;
+}
+
+.midContent {
+    border-radius: 5px;
+    padding: 20px 20px 15px;
+    background-color: #f7f8fa;
+    height: 100%;
+    overflow-y: auto;
+
+}
+
+
+
+/* .card {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 3px solid #dee2eb;
+    border-radius: 10px;
+}
+
+.cardFooter {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.cardButtons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    padding-right: 10px;
+}
+
+.cardInfo {
+    flex: 1.5;
+}
+
+.viewBtn,
+.editBtn {
+
+    border: 1px solid white;
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(108, 238, 188);
+
+}
+
+.viewBtn:hover,
+.editBtn:hover {
+    border: 1px solid black;
+    background-color: rgb(107, 245, 192);
+
+}
+
+.cardHeader {
+    display: flex;
+    width: 100%;
+    padding-top: 3px;
+    justify-content: flex-end;
+}
+
+.cardImg {
+    flex: 1;
+
+}
+
+.cardImg Image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.shareIcon {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+}
+
+.deleteBtn {
+    border: 2px solid rgb(234, 223, 223);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(225, 75, 75);
+}
+
+.deleteBtn:hover {
+    background-color: rgb(232, 27, 27);
+}
+
+.cardBody {
+    flex: 1;
+}
+
+.textArea p {
+    font-size: smaller;
+    padding: 2px;
+}
+
+.textArea h1 {
+    font-size: large;
+    line-height: 20px;
+    padding: 2px;
+}
+
+.cardBodyHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 10px;
+} */

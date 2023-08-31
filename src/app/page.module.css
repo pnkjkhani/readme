@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    min-height: 100vh;
+  }
+  .container2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+  
+  }
+  .textContainer{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .title{
+    font-size: 30px;
+    font-weight: 300;
+  }
+  .imgContainer{
+    flex: 1;
+    width: 100%;
+    
+  }
+  .img{ 
+    object-fit: cover;
+    width: 100%;
+    border-radius: 50%;
+  }
+  .btn{
+    background-color:  rgb(107, 245, 192);
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    max-width: max-content;
+    padding: 8px;
+  }

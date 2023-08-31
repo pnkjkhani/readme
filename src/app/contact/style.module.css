@@ -1,0 +1,86 @@
+.container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    height: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header span {
+    font-size: 50px;
+}
+
+.header p {
+    font-size: 20px;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imgContainer {
+    width: 50vw;
+}
+
+.img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+}
+
+.form {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formArea {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: black;
+    /* align-items: center;  */
+    justify-content:center;
+}
+
+.txt {
+    height: 40px;
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.txtMsg{
+    height: 100px;
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.btn {
+    background-color:  rgb(107, 245, 192);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    /* max-width: max-content; */
+    width: 80%;
+    padding: 8px;
+
+}
+.btnContainer{
+    /* height: 40px; */
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

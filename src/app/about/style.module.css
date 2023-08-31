@@ -1,0 +1,31 @@
+.container{
+    margin-top: 60px;   
+    align-items: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.img {
+    /* width: 100vh; */
+    height: auto;
+    width: 800px;
+
+    object-fit: cover;
+    /* filter: grayscale(100%); */
+
+}
+.textArea{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+    width: 800px;
+    margin: 10px;
+    /* width: 100%; */
+}
+.upper_container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
