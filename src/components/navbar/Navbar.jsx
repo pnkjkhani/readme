@@ -7,13 +7,7 @@ import { useRouter } from 'next/navigation'
 import { signOut, useSession } from 'next-auth/react';
 import logo from "@/../../public/logo-no-background.svg"
 import Image from 'next/image';
-// import {
-//   Select,
-//   SelectContent,
-//   SelectItem,
-//   SelectTrigger,
-//   SelectValue,
-// } from "@/components/ui/select"
+import DropDown from '../dropDownNav/DropDownNav'
 
 const links = [
   {
@@ -21,12 +15,6 @@ const links = [
     title: "Home",
     url: "/"
   },
-
-  // {
-  //   id: 2,
-  //   title: "Portfolio",
-  //   url: "/portfolio"
-  // },
 
   {
     id: 3,
@@ -40,11 +28,6 @@ const links = [
     url: "/about"
   },
 
-  // {
-  //   id: 5,
-  //   title: "Contact",
-  //   url: "/contact"
-  // },
 
   {
     id: 6,
@@ -58,36 +41,23 @@ const Navbar = () => {
   const router = useRouter()
   return (
     <>
-      <div className={style.container}>
-        <div className={style.logo}>
-
-          <Image height={50} priority={true} alt='ReadMe.com' src={logo} />
-
-        </div>
-        <div className={style.links}>
-          {links.map((link) => (
-            <Link className={style.link} key={link.id} href={link.url}> {link.title} </Link>
-          ))}
-          <div >
-            {session.status == "loading" && <button className={style.auth} >Loading</button>}
-            {session.status == "authenticated" &&
-            <button className={style.auth} onClick={(e) => {e.preventDefault(), signOut() }}>logout</button>}
-            {/* //   <Select>
-            //     <SelectTrigger className="w-[180px]">
-            //       <SelectValue placeholder="Theme" />
-            //     </SelectTrigger>
-            //     <SelectContent>
-            //       <SelectItem value="light">Light</SelectItem>
-            //       <SelectItem value="dark">Dark</SelectItem>
-            //       <SelectItem value="system">System</SelectItem>
-            //     </SelectContent>
-            //   </Select> */}
-            
-            {session.status == "unauthenticated" && <button className={style.auth} onClick={() => router.push('/dashboard/login')}> login/signup</button>}
+      <div className={style.outerContainer}>
+        <div className={style.container}>
+          <div className={style.logo}>
+            <Image height={50} priority={true} alt='ReadMe.com' src={logo} />
           </div>
-        </div>
+          <div className={style.links}>
+            {links.map((link) => (
+              <Link className={style.link} key={link.id} href={link.url}> {link.title} </Link>
+            ))}
+            <div className='flex flex-col z-50' >
+              <DropDown  />
+            </div>
+          </div>
+        </div> 
       </div>
     </>
+
   )
 }
 
