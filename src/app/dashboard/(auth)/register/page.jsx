@@ -16,12 +16,15 @@ const Register = () => {
     }
   },[session.status]);
   
-   handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target[0].value
     const email = e.target[1].value
     const password = e.target[2].value
     const confirmPassword = e.target[3].value
+    if(name && email && password && confirmPassword){
+
+    
 
     if (password === confirmPassword) {
 
@@ -66,7 +69,19 @@ const Register = () => {
         theme: "colored",
       })
     }
-
+  }else{
+    toast.error("Please fill all credentials", {
+      position: "top-center",
+      autoClose: 5000,
+      draggablePercent: 60,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    })
+  }
 
   }
 
@@ -83,7 +98,6 @@ const Register = () => {
           <Link href='/dashboard/login'>Already has an account?</Link>
         </div>
       </form>
-      {err && "something went worng!"}
     </div>
   )
 }
