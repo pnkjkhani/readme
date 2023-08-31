@@ -1,12 +1,12 @@
 "use client"
 import useSWR from 'swr'
-import React, { useEffect} from 'react'
+import React, { useEffect } from 'react'
 import style from './style.module.css'
 import Image from 'next/image'
 import sortImg from '@/../../public/interlining.svg'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import twitter from '@/../../public/2.webp'
+import defaultImg from '@/../../public/2.webp'
 import logoBlack from '@/../../public/logo-no-background.svg'
 import blogging from '@/../../public/blogging.png'
 import whatsapp from '@/../../public/whatsapp.png'
@@ -26,14 +26,14 @@ function Dashboard() {
   const { data, mutate, error, isLoading } = useSWR(
     `/api/blogs?email=${session?.data?.user?.email}`,
     fetcher);
-  useEffect(()=>{
+  useEffect(() => {
     if (session.status == "unauthenticated") {
       router?.push("/dashboard/login")
     }
-  },[session.status])
-  
+  }, [session.status])
+
   if (session.status == "loading") {
-    return <Loader/>
+    return <Loader />
   }
   if (session.status == "authenticated") {
     return <div className={style.container}>
@@ -79,6 +79,14 @@ function Dashboard() {
               <Image height={30} alt='image' width={30} src={youtube} />
               <span>Subscribe</span>
             </li>
+            <button className={style.listItem}
+            onClick={(e) => (e.preventDefault(), signOut())}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+              </svg>
+              <span>Sign Out</span>
+              </button>
           </ul>
         </div>
       </div>
@@ -106,11 +114,11 @@ function Dashboard() {
               <div className="container px-5 -auto">
                 <div className="flex flex-wrap -m-4">
 
-                  {isLoading ? <Loader/> : data.map((item) => (
+                  {isLoading ? <Loader /> : data.map((item) => (
                     <div key={item._id} className="p-4 md:w-1/2">
                       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                         <div className=" w-full object-cover object-center">
-                          <Image src={twitter} alt="blog" />
+                          <Image width={1000} height={1000} src={item?.img ? item?.img : defaultImg} alt="blog" />
                         </div>
 
                         <div className="p-3">
