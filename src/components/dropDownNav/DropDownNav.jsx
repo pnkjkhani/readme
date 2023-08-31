@@ -1,7 +1,7 @@
 import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useState } from 'react';
-import react from 'react'
+import React from 'react'
 import blankProfilePic from "@/../../public/blank-profile-picture.webp"
 
 const DropDownNav = () => {
@@ -18,17 +18,19 @@ const DropDownNav = () => {
                 <button
                     type="button"
                     onClick={toggleDropdown}
-                    className="inline-flex justify-between align-center w-44 rounded-md border border-gray-600 shadow-sm px-2 py-1 bg-gray-800 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                    className="inline-flex justify-between align-center w-fit rounded-md border border-gray-600 shadow-sm px-2 py-1 bg-gray-800 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 md:w-44"
                     id="options-menu"
                     aria-expanded="true"
                     aria-haspopup="true"
                 >
 
 
-                    <Image className='rounded-full' width={25} height={25} src={session?.data?.user?.image ? session?.data?.user?.image :blankProfilePic} alt={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <Image className='rounded-full' width={25} height={25} src={session?.data?.user?.image ? session?.data?.user?.image : blankProfilePic} alt={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>} />
-                    {session?.data?.user?.name ? session?.data?.user?.name : "Login Here"}
+                    <div className='hidden md:contents'>
+                        {session?.data?.user?.name ? session?.data?.user?.name : "Login Here"}
+                    </div>
                     <svg
                         className="-mr-1 ml-2 h-5 w-5"
                         xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +63,7 @@ const DropDownNav = () => {
                             className="block px-4 py-2  w-full  text-sm text-white hover:bg-gray-400 hover:text-gray-900"
 
                         >
-                            {session.status=="authenticated" && "Sign Out"}
+                            {session.status == "authenticated" && "Sign Out"}
                         </button>
 
                     </div>

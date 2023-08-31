@@ -8,6 +8,7 @@ import { signOut, useSession } from 'next-auth/react';
 import logo from "@/../../public/logo-no-background.svg"
 import Image from 'next/image';
 import DropDown from '../dropDownNav/DropDownNav'
+import MenuDropdownNav from '../menuDropdown/MenuDropdownNav'
 
 const links = [
   {
@@ -52,6 +53,14 @@ const Navbar = () => {
             ))}
             <div className='flex flex-col z-50' >
               <DropDown  />
+            </div>
+          </div>
+          <div className={style.mediumDeviceNav}>
+            <div >
+            <DropDown/>
+            </div>
+            <div className='flex flex-col z-50' >
+              <MenuDropdownNav/>
             </div>
           </div>
         </div> 

@@ -48,4 +48,21 @@
     border-radius: 5px;
     background-color: rgb(107, 245, 192);
 }
+.mediumDeviceNav{
+    display: flex;
+    color: white;
+    gap: 5px;
+}
 
+@media (max-width: 768px) {
+    /* Your CSS styles here */
+    .links{
+        display: none;
+    }
+  }
+@media (min-width: 768px) {
+    /* Your CSS styles here */
+    .mediumDeviceNav{
+        display: none;
+    }
+  }
