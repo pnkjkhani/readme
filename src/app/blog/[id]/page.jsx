@@ -5,6 +5,7 @@ import Image from 'next/image'
 import img from '@/../../public/blogImg.webp'
 import { notFound } from 'next/navigation'
 import Footer from '@/components/footer/Footer'
+import Link from 'next/link'
 
 async function getData(id) {
   const res = await fetch(`http://localhost:3000/api/blogs/${id}`, {
@@ -102,19 +103,25 @@ const BlogPost = async ({ params }) => {
           </div>
         </div>
       </div> */}
-
-      <section className="text-gray-300 body-font">
+      <section className="text-gray-200 body-font">
         <div className="container px-5 py-24 mx-auto flex flex-col">
-          <div className="lg:w-5/6 mx-auto">
+          <div className="lg:w-4/6 mx-auto">
             <div className="rounded-lg h-64 overflow-hidden">
-              <div className="object-contain object-center h-full w-full ">
+              <div className="object-cover object-center h-full w-full">
                 <Image className={style.imga} src={postData.img ? postData?.img : img} width={1000} height={1000} alt="https://dummyimage.com/1200x500" />
               </div>
-              {/* <img alt="content" className="object-cover object-center h-full w-full" src={postData.img ? postData?.img : img}/> */}
             </div>
             <div className="flex flex-col sm:flex-row mt-10">
               <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
                 <div className="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
+                  {postData?.userprofilepic ?
+                    <Image className='rounded-full object-cover' src={postData?.userprofilepic} width={1000} height={1000} alt="https://dummyimage.com/1200x500" />
+                    :
+                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10" viewBox="0 0 24 24">
+                      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  }
                   <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10" viewBox="0 0 24 24">
                     <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
@@ -122,17 +129,17 @@ const BlogPost = async ({ params }) => {
                 </div>
                 <div className="flex flex-col items-center text-center justify-center">
                   <h2 className="font-medium title-font mt-4 text-gray-400 text-lg">{postData.username ? postData.username : "Unknown"}</h2>
-                  <div className="w-12 h-1 bg-indigo-200 rounded mt-2 mb-4"></div>
+                  <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
                   <p className="text-base">{postData.title}</p>
                 </div>
               </div>
-              <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left ">
-                <p className="leading-relaxed text-lg mb-4" dangerouslySetInnerHTML={{ __html: postData?.content ? postData?.content : postData?.body }}></p>
-                <button className="text-indigo-200 inline-flex items-center">Read More Blogs
+              <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                <p className="leading-relaxed text-lg mb-4 " dangerouslySetInnerHTML={{ __html: postData?.content ? postData?.content : postData?.body }}></p>
+                <Link className="text-indigo-500 inline-flex items-center" href={"/blog"}>Read More Blogs
                   <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
-                </button>
+                </Link>
               </div>
             </div>
           </div>

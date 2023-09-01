@@ -3,9 +3,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 import React from 'react'
 import blankProfilePic from "@/../../public/blank-profile-picture.webp"
+import { useRouter } from 'next/navigation';
 
 const DropDownNav = () => {
     const session = useSession()
+    const router=useRouter();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleDropdown = () => {
@@ -59,11 +61,11 @@ const DropDownNav = () => {
                         <span className="block px-2 py-2 text-sm text-white hover:bg-gray-400 hover:text-gray-900 overflow-x-hidden">{session?.data?.user?.email}</span>
                         <div className='w-full h-0.5 bg-white' />
                         <button
-                            onClick={(e) => (e.preventDefault(), signOut())}
+                            onClick={(e) => (e.preventDefault(),session.status == "authenticated"? signOut():router.push("/dashboard/login"))}
                             className="block px-4 py-2  w-full  text-sm text-white hover:bg-gray-400 hover:text-gray-900"
 
                         >
-                            {session.status == "authenticated" && "Sign Out"}
+                            {session.status == "authenticated" ?"Sign Out":"Login"}
                         </button>
 
                     </div>

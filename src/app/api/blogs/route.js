@@ -15,12 +15,12 @@ export const GET = async (req) => {
 
 export const POST = async (req) => {
 
-    const { title, desc, img, content, username, useremail } = await req.json()
+    const { title, desc, img, content, username, useremail,userprofilepic } = await req.json()
     if (title && desc && img && content && username && useremail) {
         try {
             await connectDb();
             const blog = new Blog(
-                { title, desc, img, content, username, useremail });
+                { title, desc, img, content, username, useremail,userprofilepic });
             try {
                 await blog.save()
                 return new NextResponse("Blog has been created", { status: 201 })

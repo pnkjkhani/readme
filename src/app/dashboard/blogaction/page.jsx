@@ -24,6 +24,7 @@ const Blogaction = () => {
     const [event, setEvent] = useState("");
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const userprofilepic=session?.data?.user?.image
         const username = session.data.user.name;
         const useremail = session.data.user.email;
         const title = e.target[0].value
@@ -46,6 +47,7 @@ const Blogaction = () => {
                         desc,
                         img,
                         content,
+                        userprofilepic,
                     })
                 })
                 if (res.status == 201) {

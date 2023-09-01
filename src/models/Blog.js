@@ -25,6 +25,9 @@ const BlogSchema = new Schema({
         type: String,
         require: true,
     },
+    userprofilepic: {
+        type: String,
+    },
 },
     { timestamps: true });
 mongoose.models = {}
