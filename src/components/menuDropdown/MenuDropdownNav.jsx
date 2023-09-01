@@ -41,7 +41,7 @@ const MenuDropdownNav = () => {
                             Home
                         </Link>
                         <Link
-                            href="/about us"
+                            href="/about"
                             className="block px-4 py-2  w-full  text-sm text-white hover:bg-gray-400 hover:text-gray-900"
                         >
                             About

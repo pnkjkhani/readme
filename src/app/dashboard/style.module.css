@@ -1,10 +1,9 @@
 .container {
-    margin-top: 60px;
+    margin-top: 55px;
     display: flex;
     width: 100%;
     gap: 10px;
-    z-index: 1000;
-    height: calc(100vh);
+    height: 100vh;
     text-align: justify;
     background-color: rgb(255, 255, 255);
     color: black;
@@ -19,9 +18,10 @@
 }
 
 .iconList{
-    margin-top: 50px;
+    margin-top: 20px;
     width: 100%;
-    height: fit-content;
+    height:100%;
+    
 }
 .listItem{
     display: flex;
@@ -29,7 +29,7 @@
     cursor: pointer;
     align-items: center;
     gap: 5px;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 .listItem:hover{
     background-color:  rgb(254, 249, 249);
@@ -121,6 +121,13 @@
     border: 1px solid rgb(235, 240, 245);
     /* border: 2px solid green; */
 }
+.midHeaderDropDown{
+    flex: 1;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .midHeaderFilter:hover {
     border: 1px solid black;
@@ -135,7 +142,30 @@
 
 }
 
-
+@media (max-width: 760px) {
+    .leftContainer{
+        display: none;
+    }
+    .midContainer{
+        padding: 0;
+    }
+    .midHeaderFilter{
+        display: none;
+    }
+ 
+  }
+@media (min-width: 760px) {
+    .midHeaderDropDown{
+        display: none;
+        
+    }
+ 
+  }
+@media (max-width: 550px) {
+    .midContent{
+        padding: 0;
+    }
+  }
 
 /* .card {
     width: 100%;

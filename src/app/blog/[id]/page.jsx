@@ -104,10 +104,10 @@ const BlogPost = async ({ params }) => {
         </div>
       </div> */}
       <section className="text-gray-200 body-font">
-        <div className="container px-5 py-24 mx-auto flex flex-col">
-          <div className="lg:w-4/6 mx-auto">
-            <div className="rounded-lg h-64 overflow-hidden">
-              <div className="object-cover object-center h-full w-full">
+        <div className="container px-5 py-14 mx-auto flex flex-col">
+          <div className=" mx-auto">
+            <div className="rounded-lg h-64 overflow-hidden lg:flex justify-center">
+              <div className="object-cover object-center h-full w-full lg:w-4/6">
                 <Image className={style.imga} src={postData.img ? postData?.img : img} width={1000} height={1000} alt="https://dummyimage.com/1200x500" />
               </div>
             </div>

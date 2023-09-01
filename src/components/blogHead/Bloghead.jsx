@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import style from './style.module.css'
 import Link from 'next/link';
-import MenuDropdownNav from '../menuDropdown/MenuDropdownNav';
+import BlogDropDown from '../blogDropdown/BlogDropDown';
 const links = [
     {
         id: 1,
@@ -42,7 +42,7 @@ const Bloghead = () => {
                 <input placeholder='Search blog here..' className={style.search} type="text" />
             </div>
             <div className={style.menuNav}>
-                <MenuDropdownNav />
+                <BlogDropDown/>
             </div>
 
         </div>
