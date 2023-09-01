@@ -1,11 +1,10 @@
 .container{
-    
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 40px;
+    height: 50px;
     background-color: #111;
-    padding: 3px;
+    padding: 5px;
 }
 .left{
     display: flex;
@@ -26,3 +25,15 @@
     border: 1px solid black;
     border-radius: 5px;
 }
+@media (max-width: 767px) {
+    /* Your CSS styles here */
+    .left{
+       display : none;
+    }
+  }
+@media (min-width: 767px) {
+    /* Your CSS styles here */
+    .menuNav{
+       display : none;
+    }
+  }

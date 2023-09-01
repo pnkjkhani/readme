@@ -1,6 +1,8 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import style from './style.module.css'
 import Link from 'next/link';
+import MenuDropdownNav from '../menuDropdown/MenuDropdownNav';
 const links = [
     {
         id: 1,
@@ -29,6 +31,7 @@ const links = [
 const Bloghead = () => {
     return (
         <div className={style.container}>
+            
             <div className={style.left}>
                 {links.map((link) => (
                     // {console.log(link.title)}
@@ -36,8 +39,12 @@ const Bloghead = () => {
                 ))}
             </div>
             <div className={style.right}>
-                <input placeholder='Search blog here..' className={style.search} type="text"/>
+                <input placeholder='Search blog here..' className={style.search} type="text" />
             </div>
+            <div className={style.menuNav}>
+                <MenuDropdownNav />
+            </div>
+
         </div>
     )
 }

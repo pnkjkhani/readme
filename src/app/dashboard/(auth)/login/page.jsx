@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'react-toastify';
+import logo from '@/../../public/logo-no-background.svg'
+import Image from 'next/image'
 const Login = () => {
   const session = useSession();
   const router = useRouter();
@@ -54,7 +56,9 @@ const Login = () => {
     return (
       <div className="min-h-screen w-full flex items-center justify-center bg-gray-800">
         <div className="bg-gray-400 p-8 rounded shadow-md w-full sm:w-96">
-          <h1 className="text-2xl font-semibold text-black mb-6">Login</h1>
+          <h1 className="text-2xl font-semibold text-black mb-6">
+            <Image src={logo} height={1000} width={1000} alt='logo'/>
+            Login</h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label htmlFor="email" className="block text-sm font-medium text-black">

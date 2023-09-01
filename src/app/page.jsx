@@ -8,14 +8,15 @@ export default function Home() {
     <>
       <div className={style.container}>
         <div className={style.container2}>
+        <div className={style.imgContainer}>
+            <Image className={style.img} src={img1} alt='image' />
+          </div>
           <div className={style.textContainer}>
             <h1 className={style.title}> Unleash Your Voice, Explore Every Story: Your Hub for Creating and Discovering Blogs</h1>
             <p>"Elevate Your Thoughts: Where Words Come to Life", " Navigating the Digital Frontier: Exploring Tech Trends and Innovations"</p>
             <button className={style.btn}>see work</button>
           </div>
-          <div className={style.imgContainer}>
-            <Image className={style.img} src={img1} alt='image' />
-          </div>
+          
         </div>
 
         <section className="text-gray-600 body-font">
