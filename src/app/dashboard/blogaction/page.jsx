@@ -16,7 +16,7 @@ const Blogaction = () => {
         if (session.status == 'unauthenticated') {
             router.push('/dashboard/login')
         }
-    }, [session.event,router]);
+    }, [session.status,router]);
     if (session == "loading") {
         return <Loader />
     }

@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react'
-
+import Image from 'next/image';
 const Profile = () => {
     const session = useSession();
     const router = useRouter();
@@ -21,10 +21,10 @@ const Profile = () => {
     if (session.status == "authenticated") {
         return (
             
-            <div >
+            
                 <section className="text-gray-600 body-font">
                     <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-                        <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 rounded-2xl object-cover object-center rounded" alt="hero" src={session?.data?.user?.image} />
+                        <Image width={1000} height={1000} className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 rounded-2xl object-cover object-center rounded" alt="hero" src={session?.data?.user?.image} />
                         <div className="text-center lg:w-2/3 w-full">
                             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">{session?.data?.user?.name}</h1>
                             <p className="mb-8 leading-relaxed">{session?.data?.user?.email}</p>
@@ -35,7 +35,7 @@ const Profile = () => {
                         </div>
                     </div>
                 </section>
-            </div>
+           
 
         )
     }
