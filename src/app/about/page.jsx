@@ -9,7 +9,7 @@ const About = () => {
     <div className={style.container}>
 
       <div className={style.imgContainer}>
-        <Image className={style.img} alt='image' src={img2} />
+        <Image className={style.img} alt='image' height={1000} width={1000} src={img2} />
       </div>
 
       <div className={style.textArea}>

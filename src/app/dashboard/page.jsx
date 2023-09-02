@@ -63,14 +63,18 @@ function Dashboard() {
                 <Image height={30} width={30} alt='image' src={dashboard} />
                 <span>Dashboard</span>
               </li>
-              <li className={style.listItem}>
-                <Image height={30} alt='image' width={30} src={blogging} />
-                <span>Blogs</span>
-              </li>
-              <li className={style.listItem}>
-                <Image height={30} alt='image' width={30} src={operator} />
-                <span>Contact Us</span>
-              </li>
+              <Link href={"/blog"}>
+                <li className={style.listItem}>
+                  <Image height={30} alt='image' width={30} src={blogging} />
+                  <span>Blogs</span>
+                </li>
+              </Link>
+              <Link href={"/contact"}>
+                <li className={style.listItem}>
+                  <Image height={30} alt='image' width={30} src={operator} />
+                  <span>Contact Us</span>
+                </li>
+              </Link>
               <li className={style.hLine} />
 
               <li className={style.listItem}>
@@ -98,7 +102,7 @@ function Dashboard() {
             <div className={style.midHeader}>
               <div className={style.midHeaderContent}>
                 <div className={style.midHeaderDropDown}>
-                  <DashboardDropdown/>
+                  <DashboardDropdown />
                 </div>
                 <div className={style.midHeaderSearch}>
                   <input placeholder='Search here' type="text" />
