@@ -16,7 +16,7 @@ const Register = () => {
     if (session.status == "authenticated") {
       router.push("/dashboard/login?success:Account has been created")
     }
-  }, [session.status]);
+  }, [session.status,router]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

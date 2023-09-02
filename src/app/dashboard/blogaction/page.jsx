@@ -16,12 +16,11 @@ const Blogaction = () => {
         if (session.status == 'unauthenticated') {
             router.push('/dashboard/login')
         }
-    }, [session.event]);
+    }, [session.event,router]);
     if (session == "loading") {
         return <Loader />
     }
     const [imgId, setImgId] = useState("")
-    const [event, setEvent] = useState("");
     const handleSubmit = async (e) => {
         e.preventDefault();
         const userprofilepic=session?.data?.user?.image

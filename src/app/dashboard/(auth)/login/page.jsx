@@ -16,7 +16,7 @@ const Login = () => {
     if (session.status === "authenticated") {
       router.push("/dashboard");
     }
-  }, [session.status]);
+  }, [session.status,router]);
   if (session.status === "loading") {
     return <div>Loading...</div>
   }

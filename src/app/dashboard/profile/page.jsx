@@ -13,7 +13,7 @@ const Profile = () => {
         if (session.status == "unauthenticated") {
             router.push('/dashboard/login');
         }
-    }, [session.status])
+    }, [session.status,router])
 
     if (session.status == "loading") {
         return <Loader/>;
