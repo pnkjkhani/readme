@@ -13,10 +13,10 @@ const Blogaction = () => {
     const session = useSession();
     const router = useRouter();
     useEffect(() => {
-        if (session.status == 'unauthenticated') {
-            router.push('/dashboard/login')
+        if (session.status === "unauthenticated") {
+          router.push("/dashboard");
         }
-    }, [session.status,router]);
+      }, [session.status,router]);
     if (session == "loading") {
         return <Loader />
     }
