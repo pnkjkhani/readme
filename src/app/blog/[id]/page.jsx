@@ -122,10 +122,6 @@ const BlogPost = async ({ params }) => {
                       <circle cx="12" cy="7" r="4"></circle>
                     </svg>
                   }
-                  <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10" viewBox="0 0 24 24">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
                 </div>
                 <div className="flex flex-col items-center text-center justify-center">
                   <h2 className="font-medium title-font mt-4 text-gray-400 text-lg">{postData.username ? postData.username : "Unknown"}</h2>
