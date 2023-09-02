@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './style.module.css'
 import Image from 'next/image'
-import img2 from '../../../public/2.webp'
+import img2 from '../../../public/showcases-16.avif'
 import Footer from '@/components/footer/Footer'
 
 const About = () => {
