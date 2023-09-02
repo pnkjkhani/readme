@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import style from './page.module.css'
 import img2 from '../../public/website-designer-bro.svg'
+import Link from 'next/link'
 // import Footer from '@/components/footer/Footer'
 export default function Home() {
 
@@ -14,7 +15,7 @@ export default function Home() {
           <div className={style.textContainer}>
             <h1 className={style.title}> Unleash Your Voice, Explore Every Story: Your Hub for Creating and Discovering Blogs</h1>
             <p>"Elevate Your Thoughts: Where Words Come to Life", " Navigating the Digital Frontier: Exploring Tech Trends and Innovations"</p>
-            <button className={style.btn}>see work</button>
+            <Link href={"/blog"} className={style.btn}>see work</Link>
           </div>
           
         </div>
