@@ -58,7 +58,7 @@ const DropDownNav = () => {
                     aria-labelledby="options-menu"
                 >
                     <div className='py-1' role="none">
-                        <span className={`block px-2 py-2 text-sm text-white hover:bg-gray-400 hover:text-gray-900 overflow-x-hidden`}>{session?.data?.user?.email}</span>
+                        {session.status == "authenticated"&&<span className={`block px-2 py-2 text-sm text-white hover:bg-gray-400 hover:text-gray-900 overflow-x-hidden`}>{session?.data?.user?.email}</span>}
                         <div className='w-full h-0.5 bg-white' />
                         <button
                             onClick={(e) => (e.preventDefault(),session.status == "authenticated"? signOut():router.push("/dashboard/login"))}

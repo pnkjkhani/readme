@@ -5,11 +5,6 @@ import Image from 'next/image'
 import img from '@/../../public/contactImg.webp'
 import Footer from '@/components/footer/Footer'
 import { toast } from 'react-toastify';
-// import { Toaster } from "@/components/ui/toaster"
-// export const metadata = {
-//   title: 'ReadMe.com | contact us',
-//   description: 'Contact to ReadMe.com and query here.',
-// }
 const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
