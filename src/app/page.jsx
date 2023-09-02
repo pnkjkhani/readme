@@ -2,7 +2,7 @@ import Image from 'next/image'
 import style from './page.module.css'
 import img2 from '../../public/website-designer-bro.svg'
 import Link from 'next/link'
-// import Footer from '@/components/footer/Footer'
+import Footer from '@/components/footer/Footer'
 export default function Home() {
 
   return (
@@ -78,7 +78,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
