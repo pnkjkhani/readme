@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import style from './page.module.css'
-import img1 from '../../public/1.webp'
-import Footer from '@/components/footer/Footer'
+import img2 from '../../public/website-designer-bro.svg'
+// import Footer from '@/components/footer/Footer'
 export default function Home() {
 
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <div className={style.container}>
         <div className={style.container2}>
         <div className={style.imgContainer}>
-            <Image className={style.img} src={img1} alt='image' />
+            <Image className={style.img} src={img2} alt='image' />
           </div>
           <div className={style.textContainer}>
             <h1 className={style.title}> Unleash Your Voice, Explore Every Story: Your Hub for Creating and Discovering Blogs</h1>
@@ -19,11 +19,11 @@ export default function Home() {
           
         </div>
 
-        <section className="text-gray-600 body-font">
+        <section className="text-gray-700 body-font">
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-wrap -m-4">
               <div className="p-4 lg:w-1/3">
-                <div className="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                <div className="h-full bg-gray-300 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
                   <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Technology</h1>
                   <p className="leading-relaxed mb-3">Our tech-savvy writers delve into the intricacies of emerging technologies, trends, and breakthroughs. Whether
                     you're an industry professional or a curious individual, our articles provide insights that help demystify
@@ -39,7 +39,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-4 lg:w-1/3">
-                <div className="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                <div className="h-full bg-gray-300 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
 
                   <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Entertainment</h1>
                   <p className="leading-relaxed mb-3">From the silver screen to the virtual realm, we embark on journeys through the vast universe of entertainment.
@@ -57,7 +57,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-4 lg:w-1/3">
-                <div className="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                <div className="h-full bg-gray-300 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
 
                   <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Education</h1>
                   <p className="leading-relaxed mb-3">Learning is a lifelong endeavor, and our educational section is designed to be your partner on this journey.
@@ -77,7 +77,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

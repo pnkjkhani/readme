@@ -23,6 +23,8 @@
   .title{
     font-size: 30px;
     font-weight: 300;
+    text-align: justify;
+    padding: 8px;
   }
   .imgContainer{
     flex: 1;
@@ -32,10 +34,11 @@
   .img{ 
     object-fit: cover;
     width: 100%;
-    border-radius: 50%;
+    height: auto;
+    /* border-radius: 50%; */
   }
   .btn{
-    background-color:  rgb(107, 245, 192);
+    background-color:   #D1D5DB;
     border: none;
     color: black;
     cursor: pointer;
