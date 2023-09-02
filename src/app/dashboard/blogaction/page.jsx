@@ -10,6 +10,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const Blogaction = () => {
+    const [imgId, setImgId] = useState("")
     const session = useSession();
     const router = useRouter();
     useEffect(() => {
@@ -20,7 +21,6 @@ const Blogaction = () => {
     if (session == "loading") {
         return <Loader />
     }
-    const [imgId, setImgId] = useState("")
     const handleSubmit = async (e) => {
         e.preventDefault();
         const userprofilepic=session?.data?.user?.image
