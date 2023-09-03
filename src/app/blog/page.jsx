@@ -5,7 +5,6 @@ import Image from 'next/image'
 import img from '@/../../public/blogImg.webp'
 import Link from 'next/link'
 const url=process.env.API_URL;
-
 async function getData() {
   let res = await fetch(`${url}/api/blogs`, {
     cache: "no-store",
@@ -19,7 +18,7 @@ async function Blog() {
   const blogs = await getData();
   return (
     <div className={style.container}>
-      <Bloghead className={style.Bloghead} />
+      <Bloghead/>
       <div className={style.blogs}>
         <section className="text-gray-600 body-font">
           <div className="container px-5 -auto">

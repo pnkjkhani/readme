@@ -137,7 +137,7 @@ const Blogaction = () => {
                                 </div>
                                 <div className="p-2 w-full pointer ">
                                     <div className="leading-7 text-sm  text-white">Image </div>
-                                    <div className="relative flex gap-4 ">
+                                    <div className="relative w-full h-auto flex gap-4 ">
                                         <label type="file" id="image" name="image" className="w-24 h-24 border flex 
                                      items-center justify-center gap-1 bg-gray-500 text-black pointer rounded-lg ">
                                             Upload
