@@ -78,12 +78,12 @@ const Contact = () => {
           <Image src={img} className={style.img} alt='Did`n load Img!' />
         </div>
         <div className={style.form}>
-          <span>500 Terry Francine Street <br />
-            San Francisco, CA 94158
+          <span>201301 Greater Noida  <br />
+            Uttar Pradesh, 
             <br /><br />
             123-456-7890
             <br /><br />
-            info@mysite.com
+            info@ReadMe.com
           </span>
           <form onSubmit={handleSubmit} className={style.formArea}>
             <input type="text" className={style.txt} name='name' placeholder='Name' />
@@ -99,7 +99,6 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      {/* {res.status==201 && <Toaster/>} */}
       <Footer />
     </div>
   )
