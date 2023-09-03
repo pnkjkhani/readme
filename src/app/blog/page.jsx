@@ -6,7 +6,7 @@ import img from '@/../../public/blogImg.webp'
 import Link from 'next/link'
 
 async function getData() {
-  let res = await fetch("http://localhost:3000/api/blogs", {
+  let res = await fetch("http://127.0.0.1:3000/api/blogs", {
     cache: "no-store",
   })
   if (!res.ok) {

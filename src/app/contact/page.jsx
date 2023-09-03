@@ -15,7 +15,7 @@ const Contact = () => {
     const body = e.target[3].value
     if (name && email && subject && body) {
       try {
-        const res = await fetch("http://localhost:3000/api/contactus", {
+        const res = await fetch("http://127.0.0.1:3000/api/contactus", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
