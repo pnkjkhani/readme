@@ -4,9 +4,10 @@ import Bloghead from '@/components/blogHead/Bloghead'
 import Image from 'next/image'
 import img from '@/../../public/blogImg.webp'
 import Link from 'next/link'
+const url=process.env.API_URL;
 
 async function getData() {
-  let res = await fetch("http://127.0.0.1:3000/api/blogs", {
+  let res = await fetch(`${url}/api/blogs`, {
     cache: "no-store",
   })
   if (!res.ok) {

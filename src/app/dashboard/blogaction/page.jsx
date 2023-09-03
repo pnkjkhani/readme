@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 
 const Blogaction = () => {
     const [imgId, setImgId] = useState("")
+    const [evevt, setEvent] = useState("")
     const session = useSession();
     const router = useRouter();
     useEffect(() => {
@@ -30,11 +31,11 @@ const Blogaction = () => {
         const desc = e.target[1].value
         const img = imgId
         const content = e.target[3].value
-        if (title && desc && img && content) {
+        if (title && desc && img && content && username && useremail) {
 
 
             try {
-                const res = await fetch("http://127.0.0.1:3000/api/blogs", {
+                const res = await fetch("http://localhost:3000/api/blogs", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
