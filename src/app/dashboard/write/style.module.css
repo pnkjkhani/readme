@@ -1,0 +1,89 @@
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    width: 100%;
+  }
+  
+  .select{
+    margin-top: 5px;
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    width: max-content;
+    background-color: #0f172a;
+    border-radius: 10px;
+    border: 2px solid white;
+  }
+  
+  .editor {
+    display: flex;
+    gap: 20px;
+    height: 700px;
+    position: relative;
+  }
+  
+  .button,
+  .addButton {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .addButton {
+    border-color: #1a8917;
+  }
+  
+  .add {
+    display: flex;
+    gap: 20px;
+    background-color:  #0f172a;
+    position: absolute;
+    z-index: 999;
+    width: fit-content;
+    left: 50px;
+  }
+  
+  .input{
+    padding: 10px;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #ddd;
+  }
+  .desc{
+    padding: 8px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #ddd;
+  }
+  
+  .input::placeholder{
+    color: #b3b3b1;
+  }
+  
+  .textArea {
+    width: 100%;
+  }
+  
+  .publish{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #1a8917;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+  }

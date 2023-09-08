@@ -109,7 +109,10 @@ const Login = () => {
           <Link className='text-gray-500' href={"/dashboard/register"}>Forgot password?</Link>
           <div className="mt-6 flex items-center justify-center space-x-4">
             <button
-              onClick={() => signIn('google')}
+              onClick={() => signIn('google' , {
+                redirect: true,
+                callbackUrl: '/dashboard'
+            })}
               className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300"
             >
               Google Login

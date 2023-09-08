@@ -44,7 +44,7 @@ function Dashboard() {
             <div className={style.logoBlack}>
               <Image src={logoBlack} alt='ReadMe.com' />
             </div>
-            <Link href={"/dashboard/blogaction"}>
+            <Link href={"/dashboard/write"}>
               <div className={style.writeBlog}>
 
                 <Image height={30} width={30} alt='image' src={writeBlog} />

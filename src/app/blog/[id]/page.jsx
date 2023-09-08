@@ -37,7 +37,7 @@ const BlogPost = async ({ params }) => {
         <div className="container px-5 py-14 mx-auto flex flex-col">
           <div className=" mx-auto">
             <div className="rounded-lg h-64 overflow-hidden lg:flex justify-center">
-              <div className="object-cover object-center h-full w-full lg:w-4/6">
+              <div className="object-cover flex justify-center object-center h-full w-full lg:w-4/6">
                 <Image className={style.imga} src={postData.img ? postData?.img : img} width={1000} height={1000} alt="https://dummyimage.com/1200x500" />
               </div>
             </div>
@@ -59,8 +59,9 @@ const BlogPost = async ({ params }) => {
                   <p className="text-base">Title: {postData.title}</p>
                 </div>
               </div>
-              <div className="mx-10 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-                <p className="leading-relaxed text-lg mb-4  whitespace-pre-wrap">{postData?.content ? postData?.content : postData?.body }</p>
+              <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                {/* <p className="leading-relaxed text-lg mb-4  whitespace-pre-wrap">{postData?.content ? postData?.content : postData?.body }</p> */}
+                <div className="leading-relaxed text-lg mb-4  whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: postData?.content ? postData?.content : postData?.body }} />
                 <Link className="text-indigo-500 inline-flex items-center" href={"/blog"}>Read More Blogs
                   <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
