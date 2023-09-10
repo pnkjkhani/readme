@@ -38,7 +38,7 @@ const BlogPost = async ({ params }) => {
           <div className=" mx-auto">
             <div className="rounded-lg h-64 overflow-hidden lg:flex justify-center">
               <div className="object-cover flex justify-center object-center h-full w-full lg:w-4/6">
-                <Image className={style.imga} src={postData.img ? postData?.img : img} width={1000} height={1000} alt="https://dummyimage.com/1200x500" />
+                <Image className={style.imga} src={postData?.img ? postData?.img : img} width={1000} height={1000} alt="https://dummyimage.com/1200x500" />
               </div>
             </div>
             <div className="flex flex-col sm:flex-row mt-10">
