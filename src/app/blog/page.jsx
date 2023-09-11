@@ -8,12 +8,14 @@ const url=process.env.API_URL;
 async function getData() {
   let res = await fetch(`${url}/api/blogs`, {
     cache: "no-store",
+    
   })
   if (!res.ok) {
     throw new Error('Failed to fetch blogs. Serve side error..')
   }
   return res.json()
 }
+
 async function Blog() {
   const blogs = await getData();
   return (
