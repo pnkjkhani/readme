@@ -1,34 +1,60 @@
-"use client"
-import React, { useState } from 'react'
+import React from 'react'
 import style from './style.module.css'
 import Link from 'next/link';
 import BlogDropDown from '../blogDropdown/BlogDropDown';
 const links = [
     {
         id: 1,
-        title: "All Blogs",
-        url: "/"
+        title: "All Posts",
+        url: "/blog"
+    },
+    {
+        id: 4,
+        title: "coding",
+        url: "?cat=coding"
     },
 
     {
         id: 2,
-        title: "Technology",
-        url: "/portfolio"
+        title: "Style",
+        url: "?cat=style"
     },
 
     {
         id: 3,
-        title: "Entertainment",
-        url: "/blog"
+        title: "Fashion",
+        url: "?cat=fashion"
     },
 
     {
         id: 4,
-        title: "Education",
-        url: "/about"
+        title: "Food",
+        url: "?cat=food"
     },
+    {
+        id: 4,
+        title: "Culture",
+        url: "?cat=culture"
+    },
+    {
+        id: 4,
+        title: "Teavel",
+        url: "?cat=travel"
+    },
+    
 ];
-const Bloghead = () => {
+const getData=async ()=>{
+    const res=await fetch('http://localhost:3000/api/category',{
+        cache:'no-cache',
+    });
+    if(!res?.ok){
+        throw new Error('categories not found')
+    }
+    return res.json();
+}
+const Bloghead =async () => {
+    // const data=await getData();
+    // console.log(data)
     return (
         <div className={style.container}>
             

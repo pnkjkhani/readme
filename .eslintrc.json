@@ -1,14 +1,33 @@
 // {
 //   "extends": "next/core-web-vitals"
 // }
+{
+  "extends": "next",
+  "rules": {
+    "react/no-unescaped-entities": 0,
+    "@next/next/no-page-custom-font": "off"
+  },
+  "parser": "@babel/eslint-parser"
+}
 // {
-//   "extends": "next",
-//   "rules": {
-//     "react/no-unescaped-entities": 0,
-//     "@next/next/no-page-custom-font": "off"
+//   "extends": "next/core-web-vitals",
+//   "rules": { "react/no-unescaped-entities": 0 },
+//   "parserOptions": {
+//     "ecmaVersion": 6,
+//     "ecmaFeatures": {
+//       "experimentalObjectRestSpread": true
+//     }
 //   }
 // }
-{
-  "extends": "next/core-web-vitals",
-  "rules": { "react/no-unescaped-entities": 0 }
-}
+// {
+//   "extends": "airbnb",
+//   "parser": "babel-eslint", // This line is required to fix "unexpected token" errors
+//   "rules": {
+//       "indent": ["warn", 4],
+//       "react/jsx-indent": ["warn", 4, { "checkAttributes": true}],
+//       "react/react-in-jsx-scope": "off",
+//       "react/destructuring-assignment": "off",
+//       "no-nested-ternary": "warn",
+//       "react/prop-types": "warn"
+//   }
+// }

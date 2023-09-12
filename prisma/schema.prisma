@@ -45,7 +45,8 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  Comment       Comments[]
+  comments       Comment[]
+  posts          Post[]
 }
 
 model VerificationToken {
@@ -61,24 +62,26 @@ model Category {
   slug  String  @unique
   title String
   img   String?
-  Posts Post[]
+  posts Post[]
 }
 
 model Post {
-  id        String     @id @default(cuid()) @map("_id")
-  createdAt DateTime   @default(now())
-  slug      String     @unique
+  id        String   @id @default(cuid()) @map("_id")
+  createdAt DateTime @default(now())
+  slug      String   @unique
   title     String
   desc      String
+  content   String
   img       String
-  views     Int        @default(0)
+  views     Int      @default(0)
   catSlug   String
-  cat       Category   @relation(fields: [catSlug], references: [slug])
+  cat       Category @relation(fields: [catSlug], references: [slug])
   userEmail String
-  comments  Comments[]
+  user      User     @relation(fields: [userEmail], references: [email])
+  comments Comment[]
 }
 
-model Comments {
+model Comment {
   id        String   @id @default(cuid()) @map("_id")
   createdAt DateTime @default(now())
   content   String
