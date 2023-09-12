@@ -3,7 +3,7 @@ import { CldUploadButton } from 'next-cloudinary';
 import { CldImage } from 'next-cloudinary';
 import Image from "next/image";
 import styles from "./style.module.css";
-import {useState } from "react";
+import { useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -43,76 +43,12 @@ const WritePage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const userprofilepic = session?.data?.user?.image
-        const username = session.data.user.name;
-        const useremail = session.data.user.email;
-        
-        if (title && desc && media && value && username && useremail) {
+        // const userprofilepic = session?.data?.user?.image
+        // const username = session.data.user.name;
+        // const useremail = session.data.user.email;
 
-
-            try {
-                const res = await fetch("http://localhost:3000/api/blogs", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        username,
-                        useremail,
-                        title,
-                        desc,
-                        img:media,
-                        content: value,
-                        userprofilepic,
-                    })
-                })
-                if (res.status == 201) {
-                    // <Success message={'🦄Congrats! Blog has been created'} />
-                    toast.success('🦄Congrats! Blog has been created', {
-                        position: "top-center",
-                        autoClose: 5000,
-                        draggablePercent: 60,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored",
-                    })
-                    router.push('/dashboard');
-                } else {
-                    // <Error message='Server Error!' />
-                    toast.error('Server Error!', {
-                        position: "top-center",
-                        autoClose: 5000,
-                        draggablePercent: 60,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored",
-                    })
-                }
-            } catch (error) {
-                if (error) {
-                    // <Error message={'🦄 Sorry! Your request not completed !'} />
-                    toast.error('🦄 Sorry! Your request not completed !', {
-                        position: "top-center",
-                        autoClose: 5000,
-                        draggablePercent: 60,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored",
-                    })
-                }
-            }
-        } else {
-
-            toast.error("Please provide all fields!", {
+        if (!title || !desc || !media || !value) {
+            return toast.error("Please provide all fields!", {
                 position: "top-center",
                 autoClose: 5000,
                 draggablePercent: 60,
@@ -124,6 +60,66 @@ const WritePage = () => {
                 theme: "colored",
             })
         }
+
+        try {
+            const res = await fetch("http://localhost:3000/api/blogs", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    slug: slugify(title),
+                    title,
+                    desc,
+                    catSlug,
+                    img: media,
+                    content: value,
+                })
+            })
+            if (res.status == 201) {
+                toast.success('Congrats! Blog has been created', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    draggablePercent: 60,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                })
+                router.push('/dashboard');
+            } else {
+                // <Error message='Server Error!' />
+                return toast.error('Server Error!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    draggablePercent: 60,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                })
+            }
+        } catch (error) {
+            if (error) {
+                // <Error message={'🦄 Sorry! Your request not completed !'} />
+                return toast.error('Sorry! Your request not completed !', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    draggablePercent: 60,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                })
+            }
+        }
+
     };
 
     return (

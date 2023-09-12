@@ -26,12 +26,12 @@ function Dashboard() {
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data, mutate, error, isLoading } = useSWR(
     `/api/blogs?email=${session?.data?.user?.email}`,
-    fetcher);
+    fetcher);  
   useEffect(() => {
     if (session.status == "unauthenticated") {
       router?.push("/dashboard/login")
     }
-  }, [session.status,router])
+  }, [session.status, router])
 
   if (session.status == "loading") {
     return <Loader />
@@ -123,7 +123,7 @@ function Dashboard() {
                 <div className="container px-5 -auto">
                   <div className="flex flex-wrap -m-4">
 
-                    {isLoading ? <Loader /> : data.map((item) => (
+                    {isLoading ? <Loader /> : data?.map((item) => (
                       <div key={item._id} className="p-4 md:w-1/2">
                         <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                           <div className=" w-full object-cover object-center">
@@ -133,9 +133,9 @@ function Dashboard() {
                           <div className="p-3">
                             <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
                             <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{item.title}</h1>
-                            <p className="leading-relaxed mb-3">{item.desc ? item.desc : item.body}</p>
+                            <p className="leading-relaxed mb-3">{item?.desc ? item?.desc.substring(0,100) : item?.content.substring(0,100)}...</p>
                             <div className="flex items-center flex-wrap " >
-                              <Link href={`blog/${item._id}`} className="text-indigo-500  inline-flex items-center md:mb-2 lg:mb-0" style={{ cursor: 'pointer' }}>Learn More
+                              <Link href={`blog/${item?.slug}`} className="text-indigo-500  inline-flex items-center md:mb-2 lg:mb-0" style={{ cursor: 'pointer' }}>Learn More
                                 <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                   <path d="M5 12h14"></path>
                                   <path d="M12 5l7 7-7 7"></path>

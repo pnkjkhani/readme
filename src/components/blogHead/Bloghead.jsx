@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './style.module.css'
 import Link from 'next/link';
-import BlogDropDown from '../blogDropdown/BlogDropDown';
+import BlogDropDown from '../BlogDropdown/BlogDropDown';
 const links = [
     {
         id: 1,

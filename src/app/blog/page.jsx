@@ -1,11 +1,11 @@
 
 import style from './style.module.css'
-import Bloghead from '@/components/blogHead/Bloghead'
+import Bloghead from '@/components/BlogHead/Bloghead'
 import Image from 'next/image'
 import img from '@/../../public/blogImg.webp'
 import Link from 'next/link'
-import Cards from '@/components/cards/Cards'
-import Pagination from '@/components/pagination/Pagination'
+// import Cards from '@/components/cards/Cards'
+import Pagination from '@/components/Pagination/Pagination'
 const url = process.env.API_URL;
 async function getData(page,cat) {
   let res = await fetch(`${url}/api/blogs?page=${page}&cat=${cat||""}`, {

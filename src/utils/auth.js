@@ -12,24 +12,12 @@ export const authOptions = {
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID ||"",
             clientSecret: process.env.GOOGLE_CLIENT_SECRET ||"",
-            // httpOptions: {
-            //     timeout: 40000,
-            // },
-            authorization: {
-                params: {
-                    prompt: "consent",
-                    access_type: "offline",
-                    response_type: "code"
-                }
-            }
         }),
 
         CredentialsProvider({
             id: 'credentials',
             name: "Credentials",
             async authorize(credentials) {
-
-
                 try {
                     await connectDb();
                     const user = await User.findOne({ email: credentials.email });
