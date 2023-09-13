@@ -9,12 +9,6 @@ const links = [
         url: "/blog"
     },
     {
-        id: 4,
-        title: "coding",
-        url: "?cat=coding"
-    },
-
-    {
         id: 2,
         title: "Style",
         url: "?cat=style"
@@ -32,26 +26,31 @@ const links = [
         url: "?cat=food"
     },
     {
-        id: 4,
+        id: 5,
         title: "Culture",
         url: "?cat=culture"
     },
     {
-        id: 4,
-        title: "Teavel",
+        id: 6,
+        title: "Travel",
         url: "?cat=travel"
+    },
+    {
+        id: 7,
+        title: "coding",
+        url: "?cat=coding"
     },
     
 ];
-const getData=async ()=>{
-    const res=await fetch('http://localhost:3000/api/category',{
-        cache:'no-cache',
-    });
-    if(!res?.ok){
-        throw new Error('categories not found')
-    }
-    return res.json();
-}
+// const getData=async ()=>{
+//     const res=await fetch('http://localhost:3000/api/category',{
+//         cache:'no-cache',
+//     });
+//     if(!res?.ok){
+//         throw new Error('categories not found')
+//     }
+//     return res.json();
+// }
 const Bloghead =async () => {
     // const data=await getData();
     // console.log(data)

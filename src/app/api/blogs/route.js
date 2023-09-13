@@ -1,6 +1,6 @@
-import connectDb from "@/utils/db";
+// import connectDb from "@/utils/db";
 import { NextResponse } from "next/server";
-import Blog from "@/models/Blog";
+// import Blog from "@/models/Blog";
 import prisma from "@/utils/connect";
 import { getAuthSession } from "@/utils/auth";
 

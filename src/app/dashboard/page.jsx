@@ -124,7 +124,7 @@ function Dashboard() {
                   <div className="flex flex-wrap -m-4">
 
                     {isLoading ? <Loader /> : data?.map((item) => (
-                      <div key={item._id} className="p-4 md:w-1/2">
+                      <div key={item.slug} className="p-4 md:w-1/2">
                         <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                           <div className=" w-full object-cover object-center">
                             <Image width={1000} height={1000} src={item?.img ? item?.img : defaultImg} alt="blog" />

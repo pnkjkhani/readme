@@ -4,7 +4,6 @@ import Bloghead from '@/components/BlogHead/Bloghead'
 import Image from 'next/image'
 import img from '@/../../public/blogImg.webp'
 import Link from 'next/link'
-// import Cards from '@/components/cards/Cards'
 import Pagination from '@/components/Pagination/Pagination'
 const url = process.env.API_URL;
 async function getData(page,cat) {
@@ -25,9 +24,6 @@ async function Blog({ searchParams }) {
   const POST_PER_PAGE = 3;
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page-1) + POST_PER_PAGE < count;
-  // console.log(page);
-  // const posts = await getData(page);
-  // console.log(blogs);
   return (
     <div className={style.container}>
       <Bloghead />
@@ -37,7 +33,7 @@ async function Blog({ searchParams }) {
             <div className="flex flex-wrap -m-4">
               {
                 blogs.map((item) => (
-                  <div key={item.slug} className="p-4 md:w-1/3">
+                  <div key={item?.slug} className="p-4 md:w-1/3">
                     <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                       <div className=" w-full object-cover object-center">
                         <Image src={item?.img ? item?.img : img} width={1000} height={1000} alt="blog" />
@@ -70,12 +66,10 @@ async function Blog({ searchParams }) {
                   </div>
                 ))
               }
-              <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} />
-              {/* <Cards blogs={blogs}/> */}
             </div>
           </div>
+          <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} />
         </section>
-        {/* TailBlocks */}
       </div>
     </div>
   )

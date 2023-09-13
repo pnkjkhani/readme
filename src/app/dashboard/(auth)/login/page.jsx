@@ -16,13 +16,13 @@ const Login = () => {
     if (session.status === "authenticated") {
       router.push("/dashboard");
     }
-  }, [session.status,router]);
+  }, [session.status, router]);
   if (session.status === "loading") {
     return <div>Loading...</div>
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if(!email || !password){
+    if (!email || !password) {
       return toast.error("Peovide all credentials!", {
         position: "top-center",
         autoClose: 5000,
@@ -36,7 +36,28 @@ const Login = () => {
       })
     }
     try {
-      signIn("credentials", { email, password });
+      console.log(email)
+      const signInResponse = await signIn('credentials', {
+        email,
+        password,
+        redirect: false,
+      })
+      console.log(signInResponse)
+      if (!signInResponse || signInResponse.ok !== true) {
+        return toast.error("Invalid credentials", {
+          position: "top-center",
+          autoClose: 5000,
+          draggablePercent: 60,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        })
+      } else {
+        router.refresh();
+      }
     } catch (error) {
       return toast.error("something went wrong", {
         position: "top-center",
@@ -50,14 +71,14 @@ const Login = () => {
         theme: "colored",
       })
     }
-    
+
   }
   if (session.status === "unauthenticated") {
     return (
       <div className="min-h-screen w-full flex items-center justify-center bg-gray-800">
         <div className="bg-gray-400 p-8 rounded shadow-md w-full sm:w-96">
           <h1 className="text-2xl font-semibold text-black mb-6">
-            <Image src={logo} height={1000} width={1000} alt='logo'/>
+            <Image src={logo} height={1000} width={1000} alt='logo' />
             Login</h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -109,10 +130,10 @@ const Login = () => {
           <Link className='text-gray-500' href={"/dashboard/register"}>Forgot password?</Link>
           <div className="mt-6 flex items-center justify-center space-x-4">
             <button
-              onClick={() => signIn('google' , {
+              onClick={() => signIn('google', {
                 redirect: true,
                 callbackUrl: '/dashboard'
-            })}
+              })}
               className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300"
             >
               Google Login

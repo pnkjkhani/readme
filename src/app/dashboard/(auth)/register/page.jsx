@@ -20,7 +20,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name || !email || !password || !password || !confirmPassword) {
+    if (!name || !email || !password || !confirmPassword) {
       return toast.error("Please fill all credentials", {
         position: "top-center",
         autoClose: 5000,
@@ -69,7 +69,7 @@ const Register = () => {
         progress: undefined,
         theme: "colored",
       });
-      res.status == 404 && toast.error("User already exist!", {
+       return res.status == 404 && toast.error("User already exist!", {
         position: "top-center",
         autoClose: 5000,
         draggablePercent: 60,
@@ -81,7 +81,7 @@ const Register = () => {
         theme: "colored",
       });
     } catch (error) {
-      toast.error("Server error!", {
+      return toast.error("Server error!", {
         position: "top-center",
         autoClose: 5000,
         draggablePercent: 60,
