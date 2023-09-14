@@ -4,6 +4,8 @@ import { useState } from 'react';
 import React from 'react'
 import blankProfilePic from "@/../../public/blank-profile-picture.webp"
 import { useRouter } from 'next/navigation';
+import Profilecomponent from '../profileComponent/Profilecomponent';
+import Link from 'next/link';
 
 const DropDownNav = () => {
     const session = useSession()
@@ -20,7 +22,7 @@ const DropDownNav = () => {
                 <button
                     type="button"
                     onClick={toggleDropdown}
-                    className="inline-flex justify-between align-center w-fit rounded-md border border-gray-600 shadow-sm px-2 py-1 bg-gray-800 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 md:w-44"
+                    className="inline-flex justify-between align-center w-fit rounded-md border border-gray-600 shadow-sm px-2 py-2  text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 md:w-44"
                     id="options-menu"
                     aria-expanded="true"
                     aria-haspopup="true"
@@ -51,23 +53,17 @@ const DropDownNav = () => {
             </div>
 
             {isOpen && (
+                session.status == "authenticated"?
+                <Profilecomponent/>
+                :
                 <div
-                    className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5"
+                    className="origin-top-right absolute right-0 mt-2 w-52 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5"
                     role="menu"
                     aria-orientation="vertical"
                     aria-labelledby="options-menu"
                 >
-                    <div className='py-1' role="none">
-                        {session.status == "authenticated"&&<span className={`block px-2 py-2 text-sm text-white hover:bg-gray-400 hover:text-gray-900 overflow-x-hidden`}>{session?.data?.user?.email}</span>}
-                        <div className='w-full h-0.5 bg-white' />
-                        <button
-                            onClick={(e) => (e.preventDefault(),session.status == "authenticated"? signOut():router.push("/dashboard/login"))}
-                            className="block px-4 py-2  w-full  text-sm text-white hover:bg-gray-400 hover:text-gray-900"
-
-                        >
-                            {session.status == "authenticated" ?"Sign Out":"Login"}
-                        </button>
-
+                    <div className='py-1 flex w-full justify-center cursor-pointer' role="none">
+                        <Link href={"/dashboard/login"}>Login</Link>
                     </div>
                 </div>
             )}

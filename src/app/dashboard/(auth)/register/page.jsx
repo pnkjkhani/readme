@@ -69,7 +69,18 @@ const Register = () => {
         progress: undefined,
         theme: "colored",
       });
-       return res.status == 404 && toast.error("User already exist!", {
+       res.status == 404 && toast.error("User already exist!", {
+        position: "top-center",
+        autoClose: 5000,
+        draggablePercent: 60,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+       res.status == 409 && toast.error("Email is not valid", {
         position: "top-center",
         autoClose: 5000,
         draggablePercent: 60,

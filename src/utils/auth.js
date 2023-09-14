@@ -6,6 +6,8 @@ import jwt from 'jsonwebtoken'
 import { getServerSession } from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "./connect";
+
+// const nodemailer = require('nodemailer');
 export const authOptions = {
     adapter: PrismaAdapter(prisma),
     providers: [
