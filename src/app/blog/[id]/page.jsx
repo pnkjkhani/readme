@@ -83,7 +83,7 @@ const BlogPost = async ({ params }) => {
             <Image className='w-full object-cover' src={postData?.img} width={1000} height={1000} alt="https://dummyimage.com/1200x500" />
           </div>
         </div>}
-        <h1 className='text-4xl font-bold text-center mt-10'>{postData?.title && postData?.title} this is long heading from me heading from me</h1>
+        <h1 className='text-4xl font-bold text-center mt-10'>{postData?.title && postData?.title}</h1>
         <div className='flex w-full gap-5 mt-10 pl-10'>
           <div className="w-10 h-10 rounded-full  inline-flex items-center justify-center bg-gray-200 text-gray-400">
             {postData?.user?.image ?
@@ -135,7 +135,8 @@ const BlogPost = async ({ params }) => {
           </div>
         </div>
         <div className='w-full h-[1px] bg-gray-400 mb-2' />
-        <div className='font-normal text-xl leading-8 tracking-[-0.003em] break-words max-sm:leading-7 text-md whitespace-pre-wrap' dangerouslySetInnerHTML={{ __html: postData?.content }}/>
+        {/* <div className='font-normal text-xl leading-8 tracking-[-0.003em] break-words max-sm:leading-7 text-md whitespace-pre-wrap' dangerouslySetInnerHTML={{ __html: postData?.content }}/> */}
+        <div  className='font-normal text-xl leading-8 tracking-[-0.003em] break-words max-sm:leading-7 text-md' dangerouslySetInnerHTML={{ __html:postData?.content }} />
       </section>
       
     </div>
