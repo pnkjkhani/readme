@@ -7,7 +7,7 @@ import { getAuthSession } from "@/utils/auth";
 export const GET = async (req) => {
     const { searchParams } = new URL(req.url)
     const email = searchParams.get('email')
-    const POST_PER_PAGE = 3;
+    const POST_PER_PAGE = 6;
     const PAGE = searchParams.get('page');
     const CAT = searchParams.get('cat');
 

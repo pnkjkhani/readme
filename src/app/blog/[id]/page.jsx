@@ -78,7 +78,7 @@ const BlogPost = async ({ params }) => {
     // </div>
     <div className=' flex flex-col justify-center font-400 text-black w-full h-full mt-[50px] bg-gray-100 font-sans'>
       <section className="container px-5 py-10 mx-auto w-full bg-gray-200 lg:w-4/6 flex flex-col">
-        {postData.img && <div className="rounded-lg h-64 overflow-hidden  w-full lg:flex justify-center">
+        {postData.img && <div className="rounded-lg h-full overflow-hidden  w-full lg:flex justify-center">
           <div className="object-cover flex justify-center object-center lg:w-4/6">
             <Image className='w-full object-cover' src={postData?.img} width={1000} height={1000} alt="https://dummyimage.com/1200x500" />
           </div>

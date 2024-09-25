@@ -47,23 +47,23 @@ const Navbar = () => {
           <div className={style.logo}>
             <Image height={50} priority={true} alt='ReadMe.com' src={logo} />
           </div>
-          {/* <div className={style.links}>
+          <div className={style.links}>
             {links?.map((link) => (
               <Link className={style.link} key={link.id} href={link.url}> {link.title} </Link>
             ))}
             <div className='flex flex-col z-50' >
               <DropDown  />
             </div>
-          </div> */}
-          <DropDown/>
-          {/* <div className={style.mediumDeviceNav}>
+          </div>
+          {/* <DropDown/> */}
+          <div className={style.mediumDeviceNav}>
             <div >
             <DropDown/>
             </div>
             <div className='flex flex-col z-50' >
               <MenuDropdownNav/>
             </div>
-          </div> */}
+          </div>
         </div> 
       </div>
     </>
